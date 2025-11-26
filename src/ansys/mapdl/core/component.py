@@ -570,7 +570,6 @@ def _parse_cmlist_indiv(
             flags=re.DOTALL,
         )
     )
-
     # Capturing items in each block
     rg = cmname.upper() + r"\s+" + cmtype.upper() + r"\s+(.*?)\s*(?=\n\s*\n|\Z)"
     items = "\n".join(re.findall(rg, cmlist, flags=re.DOTALL))

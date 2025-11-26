@@ -233,10 +233,10 @@ def parse_chunks(
 
     array = np.frombuffer(chunk.payload, dtype)
     if chunks.done():
-        return array
+        return array.copy()
 
     arrays = [array]
     for chunk in chunks:
         arrays.append(np.frombuffer(chunk.payload, dtype))
 
-    return np.hstack(arrays)
+    return np.hstack(arrays).copy()

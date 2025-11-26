@@ -403,7 +403,6 @@ def protect_grpc(func: Callable) -> Callable:
         while True:
             try:
                 out = func(*args, **kwargs)
-
                 # Exit while-loop if success
                 break
 
